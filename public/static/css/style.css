@@ -1,0 +1,25 @@
+body { background-color: #f6f8fa; }
+.card { border-color: #e3e6ea; }
+.navbar { background: #fff !important; }
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.avatar-sm {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.avatar-lg {
+  width: 128px;
+  height: 128px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.form-narrow {
+  max-width: 560px;
+}
