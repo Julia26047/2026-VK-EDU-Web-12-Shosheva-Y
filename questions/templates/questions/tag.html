@@ -1,0 +1,16 @@
+{% extends 'questions/layout/base.html' %}
+{% load static %}
+
+{% block title %}Тег {{ tag }} — AskPupkin{% endblock %}
+
+{% block content %}
+<div class="col-12 col-lg-9 d-flex flex-column gap-3">
+  <h3>Вопросы по тегу: <span class="badge text-bg-secondary">{{ tag }}</span></h3>
+
+  {% for question in questions %}
+    {% include 'questions/partials/question.html' with obj=question %}
+  {% endfor %}
+
+  {% include 'questions/partials/pagination.html' %}
+</div>
+{% endblock %}

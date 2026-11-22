@@ -1,0 +1,29 @@
+{% extends 'questions/layout/base.html' %}
+{% load static %}
+
+{% block title %}Задать вопрос — AskPupkin{% endblock %}
+
+{% block content %}
+<div class="col-12 col-lg-9">
+  <h3 class="mb-3">Новый вопрос</h3>
+  <form class="form-narrow">
+    <div class="mb-3">
+      <label class="form-label">Заголовок</label>
+      <input type="text" class="form-control is-invalid" maxlength="100" placeholder="Кратко опишите проблему">
+      <div class="invalid-feedback">Заголовок не может быть пустым.</div>
+      <div class="form-text">Не более 100 символов.</div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Текст вопроса</label>
+      <textarea class="form-control" rows="6" maxlength="2000" placeholder="Опишите подробнее"></textarea>
+      <div class="form-text">Не более 2000 символов.</div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Теги</label>
+      <input type="text" class="form-control" placeholder="python, django">
+      <div class="form-text">Через запятую, не более 3 тегов.</div>
+    </div>
+    <button type="submit" class="btn btn-success">ASK!</button>
+  </form>
+</div>
+{% endblock %}

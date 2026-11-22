@@ -1,0 +1,43 @@
+{% extends 'questions/layout/base.html' %}
+{% load static %}
+
+{% block title %}Вопрос — AskPupkin{% endblock %}
+
+{% block content %}
+<div class="col-12 col-lg-9">
+  <h3 class="mb-3">Вопрос #{{ question_id }}</h3>
+
+  <div class="card mb-4 border-primary">
+    <div class="card-body">
+      <h4>Как начать работать с Django?</h4>
+      <p>Только начал изучать Django, подскажите, с чего начать.</p>
+    </div>
+  </div>
+
+  <h4 class="mb-3">Ответы</h4>
+  {% for answer in answers %}
+    <div class="card mb-3">
+      <div class="card-body d-flex gap-3">
+        <img src="{% static 'core/img/avatar.svg' %}" alt="Аватар" width="48" height="48">
+        <div class="flex-grow-1">
+          <p>{{ answer.text }}</p>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="correct{{ answer.id }}">
+            <label class="form-check-label" for="correct{{ answer.id }}">Правильный ответ</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+
+  {% include 'questions/partials/pagination.html' %}
+
+  <div class="card mt-4">
+    <div class="card-body">
+      <h5 class="card-title">Ваш ответ</h5>
+      <textarea class="form-control mb-3" rows="4" placeholder="Введите ответ..."></textarea>
+      <button class="btn btn-primary">Ответить</button>
+    </div>
+  </div>
+</div>
+{% endblock %}
