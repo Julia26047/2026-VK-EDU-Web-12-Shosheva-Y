@@ -1,0 +1,27 @@
+{% load static %}
+<div class="card mb-3">
+  <div class="card-body">
+    <div class="row g-3">
+      <div class="col-auto text-center">
+        <img src="{% static 'core/img/avatar.svg' %}" alt="Аватар" class="avatar mb-2" width="48" height="48">
+        <div class="d-flex align-items-center justify-content-center gap-1">
+          <button class="btn btn-sm btn-outline-secondary" type="button">▲</button>
+          <span class="fw-bold">5</span>
+          <button class="btn btn-sm btn-outline-secondary" type="button">▼</button>
+        </div>
+      </div>
+      <div class="col">
+        <h2 class="h5"><a href="{% url 'question' obj.id %}" class="text-decoration-none">{{ obj.title }}</a></h2>
+        <p class="mb-2">{{ obj.text }}</p>
+        <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+          <div>
+            <a href="{% url 'question' obj.id %}" class="me-3">Ответов: 3</a>
+            Теги:
+            <a href="{% url 'tag' 'tag1' %}" class="badge text-bg-secondary text-decoration-none">tag1</a>
+            <a href="{% url 'tag' 'tag2' %}" class="badge text-bg-secondary text-decoration-none">tag2</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+{% extends 'questions/layout/base.html' %}
+{% load static %}
+
+{% block title %}Вход — AskPupkin{% endblock %}
+
+{% block content %}
+<div class="col-12 col-lg-9">
+  <h3 class="mb-3">Вход</h3>
+  <form class="form-narrow">
+    <div class="alert alert-danger">Вы ввели неправильный email или пароль.</div>
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <input type="email" class="form-control" placeholder="name@example.com">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Пароль</label>
+      <input type="password" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Войти</button>
+    <p class="mt-3">Нет аккаунта? <a href="{% url 'signup' %}">Зарегистрируйтесь</a></p>
+  </form>
+</div>
+{% endblock %}

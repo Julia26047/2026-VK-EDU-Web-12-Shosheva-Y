@@ -1,0 +1,33 @@
+{% extends 'questions/layout/base.html' %}
+{% load static %}
+
+{% block title %}Регистрация — AskPupkin{% endblock %}
+
+{% block content %}
+<div class="col-12 col-lg-9">
+  <h3 class="mb-3">Регистрация</h3>
+  <form class="form-narrow">
+    <div class="mb-3">
+      <label class="form-label">Логин</label>
+      <input type="text" class="form-control" maxlength="30">
+      <div class="form-text">От 3 до 30 символов.</div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <input type="email" class="form-control is-invalid" value="abc@">
+      <div class="invalid-feedback">Вы ввели невалидный email.</div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Пароль</label>
+      <input type="password" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Повторите пароль</label>
+      <input type="password" class="form-control is-invalid">
+      <div class="invalid-feedback">Пароли не совпадают.</div>
+    </div>
+    <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+    <p class="mt-3">Уже есть аккаунт? <a href="{% url 'login' %}">Войти</a></p>
+  </form>
+</div>
+{% endblock %}
